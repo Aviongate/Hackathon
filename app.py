@@ -111,7 +111,7 @@ def groq_json(system: str, user: str, image_b64: str | None = None) -> Dict[str,
         raise RuntimeError("GROQ_API_KEY is missing. Add it to Streamlit Secrets.")
 
     client = Groq(api_key=api_key)
-    model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+    model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 
     messages = [
         {"role": "system", "content": system},
